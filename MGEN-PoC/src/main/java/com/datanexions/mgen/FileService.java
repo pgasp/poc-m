@@ -398,6 +398,12 @@ public class FileService {
                 if (currentMetaDoc != null) {
                     metaDoc = currentMetaDoc;
                 }
+            }else {
+            	var currentMetaDoc = (JsonObject) doc.get("metaDoc");
+                if (currentMetaDoc != null) {
+                    metaDoc = currentMetaDoc;
+                }
+            	
             }
         }
         catch (Exception e){
