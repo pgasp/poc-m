@@ -1,0 +1,9 @@
+[Unit]
+Description=MGEN POC FILE CONNECTOR KAFKA
+
+[Service]
+ExecStart=/bin/sh -c '/home/ubuntu/kafka/bin/connect-standalone.sh /home/ubuntu/kafka/config/connect-standalone.properties /home/ubuntu/filepulseconnector.properties  > /home/ubuntu/kafka/mgen=poc.log 2>&1'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target 
