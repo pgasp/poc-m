@@ -35,6 +35,10 @@
     },
     {
       "order": 9,
+      "columnOut": "CODSTTMVT"
+    },
+    {
+      "order": 10,
       "columnOut": "IDEDOMBQ"
     },
     {
@@ -44,20 +48,9 @@
     {
       "order": 12,
       "columnOut": "DATFINUSGPTN"
-    },
-    {
-      "order": 11,
-      "columnOut": "DATFINUSGCOT"
     }
   ],
   "identifiers": [
     2
   ]
 }
-
-
-
-
-
-
-
