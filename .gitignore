@@ -1,2 +1,5 @@
 
 .DS_Store
+MGEN-PoC/.project
+MGEN-PoC/.classpath
+*.prefs
