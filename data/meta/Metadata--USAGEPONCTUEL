@@ -44,20 +44,12 @@
     {
       "order": 12,
       "columnOut": "DATFINUSGPONC"
-    },
-    {
-      "order": 11,
-      "columnOut": "DATFINUSGCOT"
     }
   ],
   "identifiers": [
     2
   ]
 }
-
-
-
-
 
 
 
