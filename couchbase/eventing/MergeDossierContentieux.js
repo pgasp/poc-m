@@ -1,7 +1,7 @@
 
 function OnUpdate(doc, meta) {
     // ignore information we don't care about
-    if(doc.metaDoc == null) return;
+    if (doc.metaDoc == null||doc.metaDoc.docType==null) return;
     if (doc.metaDoc.docType !== 'DOSSIERCONTENTIEUX') return;
     var numdoscontgft = doc.numdoscontgft;  // get Num contentieux - a true variable as a N1QL parameter
    var result = SELECT meta().id as id from  `poc-mgen-2021-001` WHERE metaDoc.docType = "CONTENTIEUXCONTRAT" AND numdoscontgft = $numdoscontgft;
