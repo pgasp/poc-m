@@ -1,0 +1,64 @@
+{
+  "columns": [
+    {
+      "order": 1,
+      "isType": true,
+      "value": "CONTRATINDIVSANTE"
+    },
+    {
+      "order": 2,
+      "columnOut": "idCtr"
+    },
+    {
+      "order": 3,
+      "columnOut": "ideOfr"
+    },
+    {
+      "order": 4,
+      "columnOut": "dtDmeCtr"
+    },
+    {
+      "order": 5,
+      "columnOut": "dtDebCtr"
+    },
+    {
+      "order": 6,
+      "columnOut": "cdNatCtr"
+    },
+    {
+      "order": 7,
+      "columnOut": "cplSan"
+    },
+    {
+      "order": 8,
+      "columnOut": "cdCtGoFr"
+    },
+    {
+      "order": 9,
+      "columnOut": "cdSoCppt"
+    },
+    {
+      "order": 10,
+      "columnOut": "cdSocCori"
+    },
+    {
+      "order": 11,
+      "columnOut": "cdCnLdSt"
+    },
+    {
+      "order": 12,
+      "columnOut": "ideFom"
+    },
+    {
+      "order": 13,
+      "columnOut": "cdOFr"
+    },
+    {
+      "order": 14,
+      "columnOut": "cdNatCtr"
+    }
+  ],
+  "identifiers": [
+    2
+  ]
+}

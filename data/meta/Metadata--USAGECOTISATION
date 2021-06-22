@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "order": 1,
+      "isType": true,
+      "value": "USAGECOTISATION"
+    },
+    {
+      "order": 2,
+      "columnOut": "IDEUSGCOT"
+    },
+    {
+      "order": 3,
+      "columnOut": "NOCTR"
+    },
+    {
+      "order": 4,
+      "columnOut": "NOIDE"
+    },
+    {
+      "order": 5,
+      "columnOut": "CODSTTAS"
+    },
+    {
+      "order": 6,
+      "columnOut": "DATCREROL"
+    },
+    {
+      "order": 7,
+      "columnOut": "CODMYNPMT"
+    },
+    {
+      "order": 8,
+      "columnOut": "CODSTTMVT"
+    },
+    {
+      "order": 9,
+      "columnOut": "IDEDOMBQ"
+    },
+    {
+      "order": 10,
+      "columnOut": "DATDEBUSGCOT"
+    },
+    {
+      "order": 11,
+      "columnOut": "DATFINUSGCOT"
+    }
+  ],
+  "identifiers": [
+    2
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+

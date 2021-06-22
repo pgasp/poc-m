@@ -1,0 +1,6 @@
+cbimport csv -c couchbase://localhost -u Administrator -p password  -b cachedigital -d file:///Users/pascalgasp/git/POC-MGEN/MGEN/data/DOMICILIATIONBANCAIRE -g %docType%::%idDomBq%::%idPerPorteur% -t 6 --field-separator '|'
+cbimport csv -c couchbase://localhost -u Administrator -p password  -b cachedigital -d file:///Users/pascalgasp/git/POC-MGEN/MGEN/data/CONTRATHISTO -g %docType%::%idCtr%::%dtCreCtrHis% -t 6 --field-separator '|'
+cbimport csv -c couchbase://localhost -u Administrator -p password  -b cachedigital -d file:///Users/pascalgasp/git/POC-MGEN/MGEN/data/CONTENTIEUXCONTRAT -g %docType%::%idCtr%::%numdoscontgft% -t 6 --field-separator '|'
+cbimport csv -c couchbase://localhost -u Administrator -p password  -b cachedigital -d file:///Users/pascalgasp/git/POC-MGEN/MGEN/data/DOSSIERCONTENTIEUX -g %docType%::%numdoscontgft%::%datcredoscontgft% -t 6 --field-separator '|'
+cbimport csv -c couchbase://localhost -u Administrator -p password  -b cachedigital -d file:///Users/pascalgasp/git/POC-MGEN/MGEN/data/PHASERECOUVCX -g %docType%::%numdoscontgft%::%datcrephaserecouv% -t 6 --field-separator '|'
+cbimport csv -c couchbase://localhost -u Administrator -p password  -b cachedigital -d file:///Users/pascalgasp/git/POC-MGEN/MGEN/data/CONTRATINDIVSANTE -g %docType%::%idCtr% -t 6 --field-separator '|'

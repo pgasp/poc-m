@@ -1,0 +1,25 @@
+{
+  "columns": [
+    {
+      "order": 1,
+      "isType": true,
+      "value": "CONTENTIEUXCONTRAT"
+    },
+    {
+      "order": 2,
+      "columnOut": "idCtr"
+    },
+    {
+      "order": 3,
+      "columnOut": "numdoscontgft"
+    },
+    {
+      "order": 4,
+      "columnOut": "datcrecont"
+    }
+  ],
+  "identifiers": [
+    2,
+    3
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "columns": [
+    {
+      "order": 1,
+      "isType": true,
+      "value": "DOMICILIATIONBANCAIRE"
+    },
+    {
+      "order": 2,
+      "columnOut": "idDomBq"
+    },
+    {
+      "order": 3,
+      "columnOut": "idPerPorteur"
+    },
+    {
+      "order": 4,
+      "columnOut": "idPceDom"
+    },
+    {
+      "order": 5,
+      "columnOut": "idPceOtoPlv"
+    },
+    {
+      "order": 6,
+      "columnOut": "cdTypDom"
+    },
+    {
+      "order": 7,
+      "columnOut": "cdBq"
+    },
+    {
+      "order": 8,
+      "columnOut": "cdGuichet"
+    },
+    {
+      "order": 9,
+      "columnOut": "noCptBq"
+    },
+    {
+      "order": 10,
+      "columnOut": "cleRib"
+    },
+    {
+      "order": 11,
+      "columnOut": "iban"
+    },
+    {
+      "order": 12,
+      "columnOut": "cdBic"
+    },
+    {
+      "order": 13,
+      "columnOut": "tituCpt"
+    },
+    {
+      "order": 14,
+      "columnOut": "libBq"
+    },
+    {
+      "order": 15,
+      "columnOut": "dtDebValDomBq"
+    },
+    {
+      "order": 16,
+      "columnOut": "dtFinValDomBq"
+    },
+    {
+      "order": 17,
+      "columnOut": "dtRecod"
+    },
+    {
+      "order": 18,
+      "columnOut": "dtRcd"
+    },
+    {
+      "order": 19,
+      "columnOut": "ddEtaDom"
+    },
+    {
+      "order": 20,
+      "columnOut": "topBqRef"
+    },
+    {
+      "order": 21,
+      "columnOut": "topUsgCtr"
+    },
+    {
+      "order": 21,
+      "columnOut": "typPerPorteur"
+    }
+  ],
+  "identifiers": [
+    3,2
+  ]
+}

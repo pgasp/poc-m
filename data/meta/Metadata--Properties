@@ -1,0 +1,23 @@
+{
+  "separator": "|",
+  "headerColumns": [{
+    "order": 1,
+    "columnOut": "Sender"
+  }, {
+    "order": 2,
+    "columnOut": "Date"
+  }, {
+    "order": 3,
+    "columnOut": "Version"
+  }, {
+    "order": 4,
+    "columnOut": "num"
+  }, {
+    "order": 5,
+    "columnOut": "nbRecord"
+  }, {
+    "order": 6,
+    "columnOut": "frequency"
+  }],
+  "linesTypes": ["CONTENTIEUXCONTRAT", "CONTRATHISTO", "CONTRATINDIVSANTE", "DOMICILIATIONBANCAIRE", "DOSSIERCONTENTIEUX", "PHASERECOUVCX","USAGECOTISATION","USAGEPRESTATION","USAGEPONCTUEL"]
+}

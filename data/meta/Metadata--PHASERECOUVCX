@@ -1,0 +1,41 @@
+{
+  "columns": [
+    {
+      "order": 1,
+      "isType": true,
+      "value": "PHASERECOUVCX"
+    },
+    {
+      "order": 2,
+      "columnOut": "numdoscontgft"
+    },
+    {
+      "order": 3,
+      "columnOut": "codphaserecouv"
+    },
+    {
+      "order": 4,
+      "columnOut": "datcrephaserecouv"
+    },
+    {
+      "order": 5,
+      "columnOut": "codstatmouv"
+    },
+    {
+      "order": 6,
+      "columnOut": "datdebeffphaserecouv"
+    },
+    {
+      "order": 7,
+      "columnOut": "datfineffphaserecouv"
+    },
+    {
+      "order": 8,
+      "columnOut": "codmtfphaserecouv"
+    }
+  ],
+  "identifiers": [
+    2,
+    4
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "columns": [
+    {
+      "order": 1,
+      "isType": true,
+      "value": "CONTRATHISTO"
+    },
+    {
+      "order": 2,
+      "columnOut": "idCtr"
+    },
+    {
+      "order": 3,
+      "columnOut": "dtCreCtrHis"
+    },
+    {
+      "order": 4,
+      "columnOut": "cdSttMvt"
+    },
+    {
+      "order": 5,
+      "columnOut": "cdSttCtr"
+    },
+    {
+      "order": 6,
+      "columnOut": "cdMtfSttCtr"
+    },
+    {
+      "order": 7,
+      "columnOut": "cdPrecMtfSttCtr"
+    },
+    {
+      "order": 8,
+      "columnOut": "cdCycVie"
+    },
+    {
+      "order": 9,
+      "columnOut": "dtDebEffSttCtr"
+    },
+    {
+      "order": 10,
+      "columnOut": "dtFinEffSttCtr"
+    },
+    {
+      "order": 11,
+      "columnOut": "dtDebVldPal"
+    },
+    {
+      "order": 12,
+      "columnOut": "dtFinVldPal"
+    },
+    {
+      "order": 13,
+      "columnOut": "dtFfVldCtr"
+    },
+    {
+      "order": 14,
+      "columnOut": "dtStg"
+    },
+    {
+      "order": 15,
+      "columnOut": "precMtfSttAutre"
+    }
+  ],
+  "identifiers": [
+    2,
+    3
+  ]
+}

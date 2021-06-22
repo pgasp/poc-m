@@ -1,0 +1,23 @@
+
+Get Contentieux 
+
+SELECT contentieux.idCtr,contentieux.numdoscontgft,
+contentieux.datcrecont,
+dossier.datcredoscontgft,
+dossier.codnatcont
+FROM cachedigital AS dossier Join cachedigital AS contentieux ON dossier.numdoscontgft=contentieux.numdoscontgft
+    AND contentieux.docType="CONTENTIEUXCONTRAT"
+WHERE dossier.docType="DOSSIERCONTENTIEUX"
+
+SELECT contentieux.idCtr,
+       contentieux.numdoscontgft,
+       contentieux.datcrecont,
+       dossier.datcredoscontgft,
+       dossier.codnatcont,
+       PhaseRecouvrements
+FROM cachedigital AS dossier
+    JOIN cachedigital AS contentieux ON dossier.numdoscontgft=contentieux.numdoscontgft
+    AND contentieux.docType="CONTENTIEUXCONTRAT"
+    AND contentieux.idCtr="10RC0605601095" NEST cachedigital AS PhRs ON dossier.numdoscontgft=PhRs.numdoscontgft
+    AND PhRs.docType="PHASERECOUVCX"
+LET PhaseRecouvrements=ARRAY {"datcrephaserecouv":a.datcrephaserecouv, "codstatmouv":a.codstatmouv,"codmtfphaserecouv":a.codmtfphaserecouv,"codphaserecouv":a.codphaserecouv,"datcrephaserecouv":a.datcrephaserecouv,"datfineffphaserecouv":a.datfineffphaserecouv } FOR a IN PhRs END

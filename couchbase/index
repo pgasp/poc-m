@@ -1,0 +1,13 @@
+
+CREATE INDEX idx_CONTENTIEUXCONTRAT ON cachedigital(idCtr)WHERE metaDoc.docType="CONTENTIEUXCONTRAT"
+CREATE INDEX idx_CONTRATHISTO ON cachedigital(idCtr,dtCreCtrHis)WHERE metaDoc.docType="CONTRATHISTO"
+CREATE INDEX idx_CONTRATINDIVSANTE ON cachedigital(idCtr)WHERE metaDoc.docType="CONTRATINDIVSANTE"
+CREATE INDEX idx_DOMICILIATIONBANCAIRE ON cachedigital(idDomBq,idPerPorteur)WHERE metaDoc.docType="DOMICILIATIONBANCAIRE"
+CREATE INDEX idx_DOSSIERCONTENTIEUX ON cachedigital(numdoscontgft)WHERE metaDoc.docType="DOSSIERCONTENTIEUX"
+CREATE INDEX idx_PHASERECOUVCX ON cachedigital(numdoscontgft)WHERE metaDoc.docType="PHASERECOUVCX"
+CREATE INDEX idx_ContratUsager ON cachedigital(NOCTR)WHERE metaDoc.docType="USAGECOTISATION" or metaDoc.docType="USAGECOTISATION" or metaDoc.docType="USAGEPONCTUEL"
+CREATE INDEX idx_ContratDomiciliation ON cachedigital(NOIDE)WHERE metaDoc.docType="USAGECOTISATION" or metaDoc.docType="USAGECOTISATION" or metaDoc.docType="USAGEPONCTUEL"
+
+
+
+
