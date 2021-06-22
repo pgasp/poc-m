@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MGEN - PoC</title>
+</head>
+<body>
+
+    <h1>MGEN - PoC</h1>
+    <hr/>
+    <div th:if="${message}">
+        <h2 th:text="${message}"/>
+    </div>
+
+    <h4>Choose CSV files to import:</h4>
+    <form method="POST" th:action="@{/uploadFiles}" enctype="multipart/form-data">
+        <input type="file" accept=".csv" name="files" multiple/> <br/><br/>
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr/>
+
+    <h4>© 2021 Datanexions.</h4>
+</body>
+</html>
