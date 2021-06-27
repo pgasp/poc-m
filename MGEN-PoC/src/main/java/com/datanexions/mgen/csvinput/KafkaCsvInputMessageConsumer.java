@@ -24,6 +24,9 @@ public class KafkaCsvInputMessageConsumer {
         LOGGER.info("Received payload='{}'", payload);
         this.message = payload;
 
+        fileService.processCSVData(payload, "ftp_Kafka");
+
+        /*
         // ObjectMapper instantiation
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -43,6 +46,8 @@ public class KafkaCsvInputMessageConsumer {
         catch (Exception e){
             e.printStackTrace();
         }
+
+         */
     }
 
     //added for testing purpose

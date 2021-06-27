@@ -1,5 +1,6 @@
-package com.datanexions.mgen;
+package com.datanexions.mgen.controllers;
 
+import com.datanexions.mgen.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,6 @@ import java.util.Arrays;
 
 @Controller
 public class FileController {
-
     @Autowired
     FileService fileService;
 
@@ -55,6 +55,13 @@ public class FileController {
         return "redirect:/";
     }
 
+    @GetMapping("/getContrat/{param1}")
+    public ResponseEntity<?> monroeAPI1Param(@PathVariable String param1) throws Exception {
+        var contract = fileService.monroeAPI("getContrat", param1, null, null);
+        return new ResponseEntity<>(contract, HttpStatus.OK);
+    }
+
+    /*
     @GetMapping("/{path}/{param1}")
     public ResponseEntity<?> monroeAPI1Param(@PathVariable String path, @PathVariable String param1) throws Exception {
         var contract = fileService.monroeAPI(path, param1, null, null);
@@ -74,5 +81,5 @@ public class FileController {
         var contract = fileService.monroeAPI(path, param1, param2, param3);
         return new ResponseEntity<>(contract, HttpStatus.OK);
     }
-
+    */
 }

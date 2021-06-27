@@ -21,11 +21,8 @@ public class KafkaCsvInputComponent {
     @Value("${kafka.topic.csvInputTopic}")
     private String topicName;
 
-    public void execute() {
-        LOGGER.info("KafkaCsvInputComponent is executing...");
-        for (int i = 0; i < 100; ++i) {
-            sender.send(topicName, "SimpleKafkaMessaging - Message No = " + i);
-        }
+    public void execute(String value) {
+        sender.send(topicName, value);
     }
 
     @Bean

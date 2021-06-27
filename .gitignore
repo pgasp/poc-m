@@ -3,3 +3,6 @@
 MGEN-PoC/.project
 MGEN-PoC/.classpath
 *.prefs
+mgen-poc-api/.idea/.name
+mgen-poc-api/.classpath
+*.xml

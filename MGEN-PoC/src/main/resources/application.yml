@@ -1,11 +1,6 @@
 couchbase:
-  bootstrap-servers: localhost
+  bootstrap-servers: loalhost
   bucketName: poc-mgen-2021-001
-  bucketNameLoopback: poc-mgen-2021-002-loopback
-  userName: Administrator
-  password: password
-kafka:
-  bootstrap-servers: localhost:9092
-  topic:
-    csvInputTopic: POC_MGEN_COLLECT
-    loopbackTopic: POC_MGEN_LOOPBACK
+  userName: root
+  password: D@tanexions
+

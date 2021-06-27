@@ -13,52 +13,46 @@ import com.couchbase.client.java.Collection;
 @Configuration
 @PropertySource("classpath:/application.yml")
 public class Config {
-	
 	@Value("${couchbase.bootstrap-servers}")
-    private  String host ;
-    @Value("${couchbase.bucketName}")
-    private  String bucketName ;
+	private String host;
+	@Value("${couchbase.bucketName}")
+	private String bucketName;
 
-    @Value("${couchbase.bucketNameLoopback}")
-    private  String bucketNameLoopback ;
-    @Value("${couchbase.userName}")
-    private  String userName ;
-    @Value("${couchbase.password}")
-    private  String password;
-    
-   
+	@Value("${couchbase.bucketNameLoopback}")
+	private String bucketNameLoopback;
+	@Value("${couchbase.userName}")
+	private String userName;
+	@Value("${couchbase.password}")
+	private String password;
 
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
 
+	@Bean("apiCollection")
+	public Collection apiCollection() {
+		Cluster cluster = Cluster.connect(host, userName, password);
+		Bucket bucketObj = cluster.bucket(bucketName);
+		Collection collection = bucketObj.defaultCollection();
+		return collection;
+	}
 
-	    @Bean
-	    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
-	        return new PropertySourcesPlaceholderConfigurer();
-	    }
+	@Bean("apiCluster")
+	public Cluster apiCluster() {
+		return Cluster.connect(host, userName, password);
+	}
 
-	    @Bean("apiCollection")
-	    public Collection bucketDefaultCollection() {
-	    	Cluster  cluster = Cluster.connect(host, userName, password);
-	           Bucket bucketObj = cluster.bucket(bucketName);
-	           Collection collection = bucketObj.defaultCollection();
-	           return collection;
-	    }
-	    
-	    @Bean("apiCluster")
-	    public Cluster apiCLuster() {
-	    	return Cluster.connect(host, userName, password);
-	    }
-	    
-	    @Bean("loopbackCollection")
-	    public Collection buckeLoopBackCollection() {
-	    	Cluster clusterLoopback = Cluster.connect(host, userName, password);
-	        Bucket bucketObjLoopback = clusterLoopback.bucket(bucketNameLoopback);
-	        Collection collection = bucketObjLoopback.defaultCollection();
-	           return collection;
-	    }
-	   
-	    @Bean("loopbackCluster")
-	    public Cluster loopBackCLuster() {
-	    	return Cluster.connect(host, userName, password);
-	    }
-	    
+	@Bean("loopbackCollection")
+	public Collection loopbackCollection() {
+		Cluster clusterLoopback = Cluster.connect(host, userName, password);
+		Bucket bucketObjLoopback = clusterLoopback.bucket(bucketNameLoopback);
+		Collection collection = bucketObjLoopback.defaultCollection();
+		return collection;
+	}
+
+	@Bean("loopbackCluster")
+	public Cluster loopbackCluster() {
+		return Cluster.connect(host, userName, password);
+	}
 }

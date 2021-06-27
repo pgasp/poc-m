@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,45 +27,31 @@ import com.couchbase.client.java.query.QueryResult;
 
 @Service
 public class FileService {
-
-
     @Autowired
     @Qualifier("apiCollection")
     Collection bucket;
-
 
     @Autowired
     @Qualifier("loopbackCollection")
     Collection bucketLoopback;
 
-    
     @Autowired
-    @Qualifier("apiCluster") 
+    @Qualifier("apiCluster")
     Cluster cluster;
-    
+
     @Autowired
-    @Qualifier("loopbackCluster") 
+    @Qualifier("loopbackCluster")
     Cluster clusterLoopback;
-    
+
     @Value("${couchbase.bucketName}")
     private  String bucketName ;
 
     @Value("${couchbase.bucketNameLoopback}")
     private  String bucketNameLoopback ;
-    
-    public FileService(){
-    	super();
-        // Main bucket
-    	/*
-        cluster = Cluster.connect(host, userName, password);
-        Bucket bucketObj = cluster.bucket(bucketName);
-        bucket = bucketObj.defaultCollection();
 
-        // Loopback bucket
-        clusterLoopback = Cluster.connect(host, userName, password);
-        Bucket bucketObjLoopback = clusterLoopback.bucket(bucketNameLoopback);
-        bucketLoopback = bucketObjLoopback.defaultCollection();
-        */
+    private final String FILECONNECT_INFO = "FILECONNECT::info";
+
+    public FileService(){
     }
 
     public void uploadFile(MultipartFile file) {
@@ -214,7 +201,6 @@ public class FileService {
                                 metaDoc.put("lastUpdateBy", name);
                                 metaDoc.put("lastUpdateDate", dateFormatter.format(currentDate));
                             }
-
 
                             jsonObject.put("metaDoc", metaDoc);
                             bucket.upsert(documentId, jsonObject);
@@ -398,12 +384,6 @@ public class FileService {
                 if (currentMetaDoc != null) {
                     metaDoc = currentMetaDoc;
                 }
-            }else {
-            	var currentMetaDoc = (JsonObject) doc.get("metaDoc");
-                if (currentMetaDoc != null) {
-                    metaDoc = currentMetaDoc;
-                }
-            	
             }
         }
         catch (Exception e){
@@ -436,5 +416,69 @@ public class FileService {
         doc.put("metaDoc", metaDoc);
 
         bucket.upsert(id, doc);
+    }
+
+    public Boolean isProcessingFile(String fileName){
+        try {
+            JsonObject connectInfo = bucket.get(FILECONNECT_INFO).contentAsObject();
+            if (connectInfo != null) {
+                var processingFiles = connectInfo.getArray("processingFiles");
+                if (processingFiles != null){
+                    return processingFiles.contains(fileName);
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void processFileStarted(String fileName) {
+        try {
+            var processingFiles = JsonArray.create();
+            try {
+                JsonObject connectInfo = bucket.get(FILECONNECT_INFO).contentAsObject();
+                if (connectInfo != null) {
+                    var currentProcessingFiles = connectInfo.getArray("processingFiles");
+                    if (currentProcessingFiles != null) {
+                        processingFiles = currentProcessingFiles;
+                    }
+                }
+            } catch (Exception e) {
+
+            }
+
+            processingFiles.add(fileName);
+            var newObj = JsonObject.create();
+            newObj.put("processingFiles", processingFiles);
+            bucket.upsert(FILECONNECT_INFO, newObj);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void processFileFinished(String fileName){
+        try {
+            JsonObject connectInfo = bucket.get(FILECONNECT_INFO).contentAsObject();
+            if (connectInfo != null) {
+                var processingFiles = connectInfo.getArray("processingFiles");
+                if (processingFiles != null){
+                    var newFiles = JsonArray.create();
+                    for (var f: processingFiles){
+                        if (!f.equals(fileName)){
+                            newFiles.add(f);
+                        }
+                    }
+                    var newObj = JsonObject.create();
+                    newObj.put("processingFiles", newFiles);
+                    bucket.upsert(FILECONNECT_INFO, newObj);
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
