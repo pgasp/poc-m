@@ -5,5 +5,6 @@ MGEN-PoC/.classpath
 *.prefs
 mgen-poc-api/.idea/.name
 mgen-poc-api/.classpath
-*.xml
+mgen-poc-api/target
+
 kafka/KafkaConnectFilePulse/kafka-connect-file-pulse/
